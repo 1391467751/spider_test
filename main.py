@@ -10,3 +10,5 @@ lis_info = mysp.get_info()
 
 
 jd_func.JD_info_save(lis_info)
+
+print(len(lis_info))

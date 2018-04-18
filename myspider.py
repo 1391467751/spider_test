@@ -38,7 +38,7 @@ class myspider:
             while(len(self.url_path)!=0):
                 url = self.url_path[0]
                 self.url_path.remove(url)
-                ele_tmp = self.func(self.driver,url)
+                ele_tmp = self.func(self,url)
                 info_tmp = []
                 for webele in ele_tmp:
                     info_tmp.append(webele.get_attribute("innerHTML"))
