@@ -8,4 +8,5 @@ mysp.add_url('https://search.jd.com/Search?keyword=7700k&enc=utf-8&wq=7700k&pvid
 mysp.start()
 lis_info = mysp.get_info()
 
+
 jd_func.JD_info_save(lis_info)
