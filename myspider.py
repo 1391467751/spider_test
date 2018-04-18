@@ -34,10 +34,15 @@ class myspider:
             if(len(self.url_path)==0):
                 print("no work now...")
                 return
+            print("start mission")
             while(len(self.url_path)!=0):
                 url = self.url_path[0]
                 self.url_path.remove(url)
-                info_tmp = self.func(self.driver,url)
+                ele_tmp = self.func(self.driver,url)
+                info_tmp = []
+                for webele in ele_tmp:
+                    info_tmp.append(webele.get_attribute("innerHTML"))
+                    
                 self.info=self.info + info_tmp
 
         finally:
@@ -45,6 +50,9 @@ class myspider:
 
     def get_info_size(self):
         return len(self.info)
+    
+    def get_info(self):
+        return self.info
 
     def finish(self):
         self.driver.quit()
