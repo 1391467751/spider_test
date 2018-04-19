@@ -44,6 +44,8 @@ class myspider:
                     info_tmp.append(webele.get_attribute("innerHTML"))
                     
                 self.info=self.info + info_tmp
+        except Exception as e:
+            driver.get_screenshot_as_file('screenshot.png')
 
         finally:
             self.finish()
